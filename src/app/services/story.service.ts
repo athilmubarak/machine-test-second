@@ -19,5 +19,23 @@ export class StoryService {
       { story_name: 'Story Four', story_point: 5 },
       { story_name: 'Story Five', story_point: 1 }
     ];
+
+    this.sprints = [
+      {
+        name: 'Sprint One',
+        capacity: 4,
+        stories: [
+          { story_name: 'Story Three', story_point: 4 }
+        ]
+      },
+      {
+        name: 'Sprint Two',
+        capacity: 4,
+        stories: [
+          { story_name: 'Story Five', story_point: 1 },
+          { story_name: 'Story Two', story_point: 3 }
+        ]
+      },
+    ];
   }
 }

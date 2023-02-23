@@ -16,4 +16,5 @@
             </mat-card>
         </div>
     </div>
+    <app-no-data *ngIf="story_service?.stories?.length === 0"></app-no-data>
 </div>

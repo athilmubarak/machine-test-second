@@ -11,6 +11,7 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SprintsComponent } from './components/sprints/sprints.component';
+import { NoDataComponent } from './components/no-data/no-data.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SprintsComponent } from './components/sprints/sprints.component';
     StoriesComponent,
     AddStoryComponent,
     FilterStoriesComponent,
-    SprintsComponent
+    SprintsComponent,
+    NoDataComponent
   ],
   imports: [
     BrowserModule,
