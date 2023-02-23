@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SprintsComponent } from './components/sprints/sprints.component';
 import { NoDataComponent } from './components/no-data/no-data.component';
+import { SprintViewComponent } from './components/sprint-view/sprint-view.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NoDataComponent } from './components/no-data/no-data.component';
     AddStoryComponent,
     FilterStoriesComponent,
     SprintsComponent,
-    NoDataComponent
+    NoDataComponent,
+    SprintViewComponent
   ],
   imports: [
     BrowserModule,

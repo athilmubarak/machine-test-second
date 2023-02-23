@@ -21,4 +21,8 @@ mat-card {
             font-size: smaller;
         }
     }
+
+    &.selected {
+        border: 2px solid;
+    }
 }

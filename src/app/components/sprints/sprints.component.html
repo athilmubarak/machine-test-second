@@ -6,15 +6,48 @@
             </button>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let sprint of story_service?.sprints;">
-            <mat-card>
-                <div class="story-name"> {{ sprint?.name }} </div>
-                <div class="point">
-                    <span>Sprint Point :</span> {{ sprint?.capacity }}
+    <div class="row">
+        <div class="col">
+            <div class="row mt-3">
+                <div [ngClass]="{'col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3': !show_stories, 'col-12 col-sm-12 col-md-12 col-lg-6': show_stories}"
+                    *ngFor="let sprint of story_service?.sprints;">
+                    <mat-card [ngClass]="{ 'selected': selected_sprint == sprint }" (click)="clickSprint(sprint)">
+                        <div class="story-name"> {{ sprint?.name }} </div>
+                        <div class="point">
+                            <span>Sprint Point :</span> {{ sprint?.capacity }}
+                        </div>
+                    </mat-card>
                 </div>
-            </mat-card>
+            </div>
+        </div>
+        <div class="col" *ngIf="show_stories">
+            <div class="table-responsive">
+                <table mat-table #table [dataSource]="data_source" style="width: 100%;">
+
+                    <ng-container matColumnDef="story_name">
+                        <th mat-header-cell *matHeaderCellDef> Story Name </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.story_name}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="story_point">
+                        <th mat-header-cell *matHeaderCellDef> Story point </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.story_point}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="['story_name', 'story_point']"></tr>
+                    <tr mat-row *matRowDef="let row; columns: ['story_name', 'story_point'];"></tr>
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell text-center text-danger" colspan="2">
+                            No Records Found
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <button mat-button class="mt-3" (click)="show_stories = false; selected_sprint = undefined;">
+                Close
+            </button>
         </div>
     </div>
+
     <app-no-data *ngIf="story_service?.sprints?.length === 0"></app-no-data>
 </div>
