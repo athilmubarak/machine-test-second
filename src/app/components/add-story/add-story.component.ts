@@ -42,7 +42,7 @@ export class AddStoryComponent implements OnInit {
   }
 
   /**
-   * to check for duplication of story
+   * to check for duplication of story name
    * 
    */
   checkForDuplication() {
