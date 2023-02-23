@@ -1,0 +1,19 @@
+<div class="m-3">
+    <div class="row justify-content-end">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+            <button mat-stroked-button color="primary" routerLink="/add-story">
+                <mat-icon>add</mat-icon> Add new Story
+            </button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let story of story_service?.stories;">
+            <mat-card>
+                <div class="story-name"> {{ story?.story_name }} </div>
+                <div class="point">
+                    <span>Story Point :</span> {{ story?.story_point }}
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

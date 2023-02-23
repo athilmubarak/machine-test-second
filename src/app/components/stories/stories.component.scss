@@ -1,0 +1,23 @@
+mat-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+    margin: 5px;
+    color: black;
+
+    .story-name {
+        font-size: x-large;
+        font-weight: 600;
+    }
+
+    .point {
+        margin-top: 10px;
+        font-size: large;
+
+        span {
+            color: gray;
+            margin-right: 5px;
+            font-size: smaller;
+        }
+    }
+}

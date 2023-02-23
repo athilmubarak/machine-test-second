@@ -1,0 +1,33 @@
+<form [formGroup]="story_form">
+    <div class="row justify-content-center mt-3">
+        <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-4 p-2 bg-light shadow">
+            <div class="col-12">
+                <mat-form-field appearance="outline">
+                    <mat-label>Story Name</mat-label>
+                    <input matInput formControlName="story_name" (keyup)="checkForDuplication()">
+                    <mat-error
+                        *ngIf="story_form?.get('story_name')?.hasError('required') || story_form?.get('story_name')?.hasError('pattern')">
+                        Story Name is required
+                    </mat-error>
+                    <mat-error *ngIf="story_form?.get('story_name')?.hasError('notValid')">
+                        Story name already exits, choose another one.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-12">
+                <mat-form-field appearance="outline">
+                    <mat-label>Story Point</mat-label>
+                    <input matInput formControlName="story_point">
+                    <mat-error
+                        *ngIf="story_form?.get('story_point')?.hasError('required') || story_form?.get('story_point')?.hasError('min')">
+                        Story Point is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+                <button mat-button routerLink="/stories">Cancel</button>
+                <button mat-raised-button color="primary" (click)="addNewStory()">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

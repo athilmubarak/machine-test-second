@@ -1,0 +1,10 @@
+<div class="row p-2">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+        <button mat-button [color]="selected_route === '/stories' ? 'primary' : '' "
+            (click)="selected_route = '/stories'" routerLink="/stories">Stories</button>
+        <button mat-button [color]="selected_route != '/stories' ? 'primary' : '' "
+            (click)="selected_route = '/sprints'" routerLink="/sprints">Sprints</button>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
