@@ -1,1 +1,19 @@
-<p>sprints works!</p>
+<div class="m-3">
+    <div class="row justify-content-end">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+            <button mat-stroked-button color="primary" routerLink="/create-sprint">
+                <mat-icon>add</mat-icon> Create new Sprint
+            </button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let sprint of story_service?.sprints;">
+            <mat-card>
+                <div class="story-name"> {{ sprint?.name }} </div>
+                <div class="point">
+                    <span>Sprint Point :</span> {{ sprint?.capacity }}
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

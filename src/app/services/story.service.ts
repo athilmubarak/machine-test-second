@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Sprint } from '../models/sprint.types';
 import { Story } from '../models/story.types';
 
 @Injectable({
@@ -8,6 +9,7 @@ export class StoryService {
 
   //Variables
   stories: Story[] = [];
+  sprints: Sprint[] = [];
 
   constructor() {
     this.stories = [
